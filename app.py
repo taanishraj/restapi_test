@@ -26,6 +26,14 @@ students = [
 def students_list():
     return jsonify(students)
 
+@todo.route('/student_api')
+def student_api():
+    import requests
+
+    url = "https://rest-api-1-03f4.onrender.com/students-list"
+    response = requests.request(method="GET", url=url)
+    return response.json()
+
 @todo.route('/student/get/<int:id>',methods=['GET'])
 def student_id(id):
     student=next((student for student in students if student['id']==id),None)
