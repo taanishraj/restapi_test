@@ -26,7 +26,7 @@ students = [
 def students_list():
     return jsonify(students)
 
-@todo.route('/student_api')
+@todo.route('/students_api')
 def student_api():
     import requests
 
